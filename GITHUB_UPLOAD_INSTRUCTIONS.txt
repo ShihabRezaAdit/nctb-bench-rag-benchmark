@@ -1,0 +1,279 @@
+================================================================================
+  NCTBench — GitHub Repository Upload Instructions
+  Step-by-step guide: from local folder to published repository
+================================================================================
+
+WHAT YOU ARE UPLOADING
+  The contents of: E:\CSAA Project\github\
+  To a new GitHub repository named: nctb-bench
+  (or any name you prefer — just replace "nctb-bench" everywhere below)
+
+PREREQUISITES CHECKLIST
+  [ ] Git installed — verify: git --version
+  [ ] GitHub account created at https://github.com
+  [ ] GitHub CLI installed (recommended) — verify: gh --version
+      OR you can use the GitHub website (manual method in Step 2B)
+
+================================================================================
+STEP 1 — UPDATE THE PLACEHOLDER URLs BEFORE UPLOADING
+================================================================================
+
+All placeholder URLs have already been updated to use the correct usernames:
+  - GitHub:      ShihabReza  (https://github.com/ShihabReza/nctb-bench)
+  - HuggingFace: ShihabReza  (https://huggingface.co/datasets/ShihabReza/nctb-qa)
+
+No manual find-and-replace needed — proceed directly to Step 2.
+
+================================================================================
+STEP 2A — CREATE THE GITHUB REPOSITORY (using GitHub CLI — recommended)
+================================================================================
+
+Open Command Prompt or PowerShell, then run:
+
+  gh auth login
+
+  Follow the prompts:
+    - "What account do you want to log into?" → GitHub.com
+    - "What is your preferred protocol?" → HTTPS
+    - "How would you like to authenticate?" → Login with a web browser
+    - Press Enter, copy the one-time code, paste it in the browser
+
+  After login, create the repository:
+
+  gh repo create nctb-bench --public --description "NCTBench: A Dual-Language RAG QA Benchmark for Educational NLP (Bengali + English, NCTB Classes 6-9)" --homepage "https://huggingface.co/datasets/ShihabReza/nctb-qa"
+
+  You will be asked "Would you like to clone it locally?" → type N (we'll push from existing folder)
+
+================================================================================
+STEP 2B — CREATE THE GITHUB REPOSITORY (using GitHub website — manual method)
+================================================================================
+
+  Skip this if you did Step 2A.
+
+  1. Go to https://github.com/new
+  2. Repository name: nctb-bench
+  3. Description: NCTBench: A Dual-Language RAG QA Benchmark for Educational NLP (Bengali + English, NCTB Classes 6-9)
+  4. Visibility: Public
+  5. DO NOT check "Initialize this repository with a README" (we're uploading our own)
+  6. Click "Create repository"
+  7. Copy the repository URL shown — it will look like:
+       https://github.com/ShihabReza/nctb-bench.git
+
+================================================================================
+STEP 3 — INITIALIZE GIT IN YOUR LOCAL FOLDER
+================================================================================
+
+Open Command Prompt (NOT PowerShell for the git commands — use cmd.exe or Git Bash).
+
+  cd /d "E:\CSAA Project\github"
+
+Initialize git and make the first commit:
+
+  git init
+  git branch -M main
+
+Add all files:
+
+  git add .
+
+Check what will be committed (look for any sensitive files):
+
+  git status
+
+You should see files staged but NOT see:
+  - .env (API keys) — already in .gitignore
+  - Any *.pdf files
+
+Now commit:
+
+  git commit -m "Initial release: NCTBench pipeline, evaluation framework, and results"
+
+================================================================================
+STEP 4 — CONNECT TO GITHUB AND PUSH
+================================================================================
+
+Replace ShihabReza with your actual GitHub username:
+
+  git remote add origin https://github.com/ShihabReza/nctb-bench.git
+  git push -u origin main
+
+If prompted for credentials:
+  - Username: your GitHub username
+  - Password: use a Personal Access Token (NOT your password)
+    To create a token: GitHub → Settings → Developer settings → Personal access tokens
+    → Tokens (classic) → Generate new token
+    Scope needed: check "repo"
+    Copy the token and paste it as the password.
+
+================================================================================
+STEP 5 — VERIFY THE REPOSITORY LOOKS CORRECT
+================================================================================
+
+After push completes, open your browser:
+
+  https://github.com/ShihabReza/nctb-bench
+
+Verify the following are visible:
+  [ ] README.md renders correctly with the badges and tables
+  [ ] src/ folder contains all 6 step*.py files + config.py + utils.py
+  [ ] evaluation/ folder contains run_evaluation.py, run_evaluation_enhanced.py,
+      metrics.py, retrievers.py, generators.py, rescore_existing.py, finalize_results.py
+  [ ] evaluation/results/ contains enriched_summary_all.csv
+  [ ] notebooks/ contains all 7 .ipynb files
+  [ ] configs/ contains phase1.yaml and phase2.yaml
+  [ ] data/ folder shows the 4 subfolders (pdfs, chunks, qa_pairs, ocr_results)
+      with .gitkeep files (data itself is on HuggingFace, not here)
+  [ ] .env is NOT visible (should be gitignored)
+  [ ] requirements.txt and run_pipeline.sh are present
+  [ ] CITATION.cff is present (GitHub shows a "Cite this repository" button automatically)
+
+================================================================================
+STEP 6 — ADD REPOSITORY TOPICS (TAGS) FOR DISCOVERABILITY
+================================================================================
+
+  GitHub website → your repo → click the gear icon next to "About" (top right of repo)
+
+  Add these topics (press Enter after each):
+    nlp
+    question-answering
+    bengali
+    rag
+    retrieval-augmented-generation
+    benchmark
+    low-resource-nlp
+    educational-nlp
+    nctb
+    bangladesh
+
+  Website: paste your HuggingFace dataset URL
+
+================================================================================
+STEP 7 — CREATE A RELEASE (VERSION TAG)
+================================================================================
+
+  git tag -a v1.0.0 -m "NCTBench v1.0.0 — initial paper release"
+  git push origin v1.0.0
+
+  Then on GitHub website:
+  → Releases → Create a release → choose tag v1.0.0
+  → Title: NCTBench v1.0.0 — Initial Paper Release
+  → Description (paste this):
+
+  ---
+  First public release of the NCTBench repository, accompanying the paper:
+
+  "NCTBench: When the Textbook Becomes the Oracle — Dual-Language RAG QA
+  Benchmark for Educational NLP"
+
+  **What's included:**
+  - Full 6-step dataset construction pipeline (Steps 1–6)
+  - AMSV 4-stage QA validation framework
+  - 15 RAG configuration evaluation scripts (Phase 1 + Phase 2)
+  - All evaluation results (evaluation/results/enriched_summary_all.csv)
+  - 7 annotated Jupyter notebooks
+  - Dataset available at HuggingFace: https://huggingface.co/datasets/ShihabReza/nctb-qa
+  ---
+
+  → Click "Publish release"
+
+================================================================================
+STEP 8 — LINK THE PAPER REPOSITORY URL BACK INTO OTHER ARTIFACTS
+================================================================================
+
+After the repo is live, update the paper and HuggingFace card:
+
+  A. In E:\CSAA Project\Latex\main.tex
+     Find: github.com/ShihabReza/nctb-bench (or any placeholder)
+     Replace with: github.com/YOUR-ACTUAL-USERNAME/nctb-bench
+
+  B. In E:\CSAA Project\huggingface\README.md
+     Find: https://github.com/ShihabReza/nctb-bench
+     Replace with the actual URL
+
+  C. In E:\CSAA Project\github\README.md (already pushed — need to update + re-push)
+     After replacing ShihabReza, commit and push again:
+
+       git add README.md CITATION.cff
+       git commit -m "Update placeholders with real repository and dataset URLs"
+       git push
+
+================================================================================
+STEP 9 — OPTIONAL: PROTECT THE MAIN BRANCH
+================================================================================
+
+  GitHub website → Settings → Branches → Add branch protection rule
+  Branch name pattern: main
+  Check: "Require a pull request before merging"
+  This prevents accidental force-pushes to main.
+
+================================================================================
+QUICK REFERENCE — ALL COMMANDS IN ORDER
+================================================================================
+
+  # From Command Prompt (run as is, replace ShihabReza)
+
+  cd /d "E:\CSAA Project\github"
+
+  git init
+  git branch -M main
+  git add .
+  git status
+  git commit -m "Initial release: NCTBench pipeline, evaluation framework, and results"
+  git remote add origin https://github.com/ShihabReza/nctb-bench.git
+  git push -u origin main
+
+  git tag -a v1.0.0 -m "NCTBench v1.0.0 — initial paper release"
+  git push origin v1.0.0
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+  PROBLEM: "git" is not recognized
+  FIX: Download Git from https://git-scm.com/download/win and install.
+       Restart Command Prompt after install.
+
+  PROBLEM: "remote: Repository not found"
+  FIX: Check the URL — make sure ShihabReza matches your GitHub login exactly.
+       Check: git remote -v   (shows the current remote URL)
+       Fix:   git remote set-url origin https://github.com/CORRECT-USERNAME/nctb-bench.git
+
+  PROBLEM: "Authentication failed" on push
+  FIX: Use a Personal Access Token, not your GitHub password.
+       Create at: GitHub → Settings → Developer settings → Personal access tokens
+       Or use: gh auth login  (if GitHub CLI is installed)
+
+  PROBLEM: Push rejected — "non-fast-forward"
+  FIX: The repo on GitHub has commits your local copy does not.
+       Since you just created it with no README, this shouldn't happen.
+       If it does: git pull origin main --allow-unrelated-histories
+       Then: git push
+
+  PROBLEM: .env file accidentally staged
+  FIX: Before committing, run:  git rm --cached .env
+       Then commit normally. The .gitignore already excludes it for future commits.
+
+  PROBLEM: Large files rejected (>100MB)
+  FIX: The .gitignore excludes large data files. The only large file risk is
+       evaluation/results/enriched_summary_all.csv — check its size.
+       Run: dir "E:\CSAA Project\github\evaluation\results\"
+
+================================================================================
+WHAT IS NOT IN THE GITHUB REPO (AND WHERE IT LIVES)
+================================================================================
+
+  NOT in GitHub:                  Location:
+  ─────────────────────────────────────────────────────────────────────────────
+  16 source PDFs                  E:\CSAA Project\NCTB Books\
+  OCR results (1,374 pages)       E:\CSAA Project\ocr_results\
+  6,887 chunks (all_chunks.json)  E:\CSAA Project\chunks\
+  ChromaDB vector index           E:\CSAA Project\embeddings\
+  12,403 validated QA pairs       HuggingFace (train.json + test.json)
+  API keys                        E:\CSAA Project\pipeline\.env  (NEVER commit)
+  LaTeX paper source              E:\CSAA Project\Latex\
+
+  The GitHub repo is a CODE repository.
+  The DATASET lives on HuggingFace (see huggingface\UPLOAD_INSTRUCTIONS.txt).
+  The PAPER lives on Overleaf (upload Latex\ folder contents).
+
+================================================================================

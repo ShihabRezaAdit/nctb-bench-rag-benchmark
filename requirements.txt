@@ -1,0 +1,49 @@
+# NCTBench — Python dependencies
+# Python 3.9+ required
+# CUDA GPU strongly recommended for EasyOCR and embedding steps
+
+# ── PDF processing ────────────────────────────────────────────────────────────
+PyMuPDF>=1.23.0
+
+# ── OCR (Bengali PDFs) ────────────────────────────────────────────────────────
+easyocr>=1.7.1
+
+# ── Embedding and vector store ────────────────────────────────────────────────
+sentence-transformers>=2.7.0
+chromadb>=0.4.22
+
+# ── Retrieval ─────────────────────────────────────────────────────────────────
+rank-bm25>=0.2.2
+
+# ── LLM generation (Together AI — OpenAI-compatible) ─────────────────────────
+openai>=1.14.0
+
+# ── Language detection (AMSV Signal 4) ───────────────────────────────────────
+langdetect>=1.0.9
+
+# ── NLI faithfulness scorer ───────────────────────────────────────────────────
+transformers>=4.38.0
+
+# ── PyTorch (required by sentence-transformers and EasyOCR) ──────────────────
+# Install the CUDA variant from pytorch.org for GPU support.
+# CPU-only: pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch>=2.1.0
+
+# ── Metrics ───────────────────────────────────────────────────────────────────
+numpy>=1.24.0
+scipy>=1.11.0
+
+# ── Data handling and evaluation ──────────────────────────────────────────────
+pandas>=2.0.0
+datasets>=2.18.0
+huggingface_hub>=0.22.0
+
+# ── Notebook support ──────────────────────────────────────────────────────────
+jupyter>=1.0.0
+ipykernel>=6.29.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+tqdm>=4.66.0
+python-dotenv>=1.0.0

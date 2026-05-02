@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment
+.env
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data — large files not tracked (download from HuggingFace)
+data/pdfs/
+data/ocr_results/
+data/extracted_text/
+data/chunks/all_chunks.json
+data/qa_pairs/qa_*.json
+data/qa_pairs/validated_qa.json
+data/qa_pairs/raw_qa_pairs.json
+
+# ChromaDB vector store (regenerate with step4)
+chromadb/
+
+# Logs
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Keep result files tracked (small CSVs)
+!evaluation/results/*.csv

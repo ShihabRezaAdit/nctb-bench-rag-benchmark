@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite it as below."
+type: dataset
+title: "NCTBench: When the Textbook Becomes the Oracle — A Dual-Language Retrieval-Augmented QA Benchmark for Low-Resource Educational NLP"
+authors:
+  - family-names: Reza
+    given-names: Md Shihab
+    email: shihab.reza@northsouth.edu
+    affiliation: North South University
+  - family-names: Hossain
+    given-names: Sk Muktadir
+    email: codderboy@gmail.com
+    affiliation: American International University-Bangladesh (AIUB)
+  - family-names: Rahman
+    given-names: Kazi Abdur
+    email: Kazi7.abdur.rahman@gmail.com
+    affiliation: American International University-Bangladesh (AIUB)
+  - family-names: Chayon
+    given-names: Muhammad Hasibur Rashid
+    email: chayon@aiub.edu
+    affiliation: American International University-Bangladesh (AIUB)
+version: 1.0.0
+date-released: "2026-05-02"
+license: CC-BY-4.0
+repository-code: "https://github.com/ShihabReza/nctb-bench"
+url: "https://huggingface.co/datasets/ShihabReza/nctb-qa"
+keywords:
+  - question-answering
+  - retrieval-augmented-generation
+  - bengali
+  - educational-nlp
+  - low-resource-nlp
+  - benchmark
+  - south-asian-languages
+  - multilingual-nlp
+abstract: >
+  NCTBench is a dual-language (Bengali/English) QA benchmark derived from
+  official NCTB pilot textbooks for Classes 6-9, covering ICT and Science.
+  It contains 12,403 validated QA pairs with evidence spans and rich metadata,
+  a reproducible construction pipeline with four-stage AMSV validation
+  (CMAR=91.05%), and a systematic evaluation of 15 RAG configurations.

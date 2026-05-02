@@ -1,0 +1,84 @@
+# Phase 1 — Base RAG evaluation configurations
+# 3 retrievers x 2 generators x 2 prompt modes = 12 configurations
+
+defaults:
+  top_k_retrieve: 10
+  top_k_generate: 5
+  temperature: 0.0
+  max_tokens: 300
+
+retrievers:
+  bm25:
+    type: BM25Retriever
+    stemming: true
+    query_expansion: true
+    language: ["bn", "en"]
+  dense:
+    type: DenseRetriever
+    model: intfloat/multilingual-e5-large
+    query_prefix: "query: "
+    top_k: 10
+  hybrid:
+    type: HybridRRFRetriever
+    dense_weight: 0.7
+    bm25_weight: 0.3
+    rrf_k: 60
+    candidate_pool: 50
+
+generators:
+  llama:
+    model: meta-llama/Llama-3.3-70B-Instruct-Turbo
+    api: together
+  qwen:
+    model: Qwen/Qwen2.5-7B-Instruct-Turbo
+    api: together
+
+configs:
+  - id: 1
+    retriever: bm25
+    generator: llama
+    prompt: grounded
+  - id: 2
+    retriever: bm25
+    generator: llama
+    prompt: open
+  - id: 3
+    retriever: bm25
+    generator: qwen
+    prompt: grounded
+  - id: 4
+    retriever: bm25
+    generator: qwen
+    prompt: open
+  - id: 5
+    retriever: dense
+    generator: llama
+    prompt: grounded
+  - id: 6
+    retriever: dense
+    generator: llama
+    prompt: open
+  - id: 7
+    retriever: dense
+    generator: qwen
+    prompt: grounded
+  - id: 8
+    retriever: dense
+    generator: qwen
+    prompt: open
+  - id: 9
+    retriever: hybrid
+    generator: llama
+    prompt: grounded
+  - id: 10
+    retriever: hybrid
+    generator: llama
+    prompt: open
+  - id: 11
+    retriever: hybrid
+    generator: qwen
+    prompt: grounded
+  - id: 12
+    retriever: hybrid
+    generator: qwen
+    prompt: open

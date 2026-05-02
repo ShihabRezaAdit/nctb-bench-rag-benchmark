@@ -1,0 +1,42 @@
+# Phase 2 — Enhanced RAG evaluation configurations
+# Cross-encoder reranking + MMR diversification + stricter grounded prompt
+# All Phase 2 configs use: Llama-3.3-70B + Grounded prompt
+
+defaults:
+  top_k_retrieve: 10
+  top_k_generate: 5
+  temperature: 0.0
+  max_tokens: 300
+  prompt: grounded_strict       # 4-rule strict prompt with 3 few-shot examples
+  generator: llama
+
+reranker:
+  model: cross-encoder/ms-marco-MiniLM-L-6-v2
+  first_stage_k: 50             # candidates passed to cross-encoder
+  rerank_k: 15                  # candidates after cross-encoder
+  score_fusion:
+    reranker_weight: 0.5
+    dense_weight: 0.3
+    bm25_weight: 0.2
+  score_normalization: sigmoid  # 1 / (1 + exp(-score/5))
+
+mmr:
+  lambda: 0.6                   # 60% relevance, 40% diversity penalty
+  input_k: 15                   # MMR input size (from reranker)
+  output_k: 5                   # MMR output size (passed to generator)
+
+generators:
+  llama:
+    model: meta-llama/Llama-3.3-70B-Instruct-Turbo
+    api: together
+
+configs:
+  - id: 13
+    first_stage_retriever: dense
+    desc: Dense+Rerank+MMR+Llama
+  - id: 14
+    first_stage_retriever: hybrid
+    desc: Hybrid+Rerank+MMR+Llama       # BEST OVERALL
+  - id: 15
+    first_stage_retriever: bm25
+    desc: BM25+Rerank+MMR+Llama
