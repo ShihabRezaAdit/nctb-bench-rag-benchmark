@@ -44,8 +44,8 @@ See `requirements.txt` for the full pinned list.
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/ShihabReza/nctb-bench.git
-   cd nctb-bench
+   git clone https://github.com/ShihabReza/nctb-bench-rag-benchmark.git
+   cd nctb-bench-rag-benchmark
    ```
 
 2. Create and activate environment:

@@ -155,8 +155,8 @@ ds = load_dataset("ShihabReza/nctb-qa")
 ### Installation
 
 ```bash
-git clone https://github.com/ShihabReza/nctb-bench.git
-cd nctb-bench
+git clone https://github.com/ShihabReza/nctb-bench-rag-benchmark.git
+cd nctb-bench-rag-benchmark
 
 # Create conda environment
 conda create -n nctbench python=3.9 -y
@@ -266,7 +266,7 @@ Full results with confidence intervals and subject breakdowns:
 ## Repository Structure
 
 ```
-nctb-bench/
+nctb-bench-rag-benchmark/
 ├── src/                        # Pipeline source code
 │   ├── step1_audit.py          # Corpus audit
 │   ├── step2_extract.py        # PDF text extraction (PyMuPDF + EasyOCR)
