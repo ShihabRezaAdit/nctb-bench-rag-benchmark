@@ -324,9 +324,9 @@ nctb-bench-rag-benchmark/
 | Name | Affiliation | Role |
 |---|---|---|
 | **Md Shihab Reza** | North South University, Dhaka, Bangladesh | Lead Author |
-| **Sk Muktadir Hossain** | American International University-Bangladesh (AIUB) | Co-Author |
-| **Kazi Abdur Rahman** | American International University-Bangladesh (AIUB) | Co-Author |
-| **Dr. Muhammad Hasibur Rashid Chayon** | American International University-Bangladesh (AIUB) | Supervisor |
+| **Sk Muktadir Hossain** | American International University-Bangladesh (AIUB), Dhaka, Bangladesh | Co-Lead Author |
+| **Kazi Abdur Rahman** | American International University-Bangladesh (AIUB), Dhaka, Bangladesh | Co-Author |
+| **Dr. Muhammad Hasibur Rashid Chayon** | American International University-Bangladesh (AIUB), Dhaka, Bangladesh | Supervisor |
 
 ---
 
