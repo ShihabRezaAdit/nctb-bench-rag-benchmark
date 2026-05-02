@@ -19,7 +19,7 @@ STEP 1 — UPDATE THE PLACEHOLDER URLs BEFORE UPLOADING
 ================================================================================
 
 All placeholder URLs have already been updated to use the correct usernames:
-  - GitHub:      ShihabReza  (https://github.com/ShihabReza/nctb-bench-rag-benchmark)
+  - GitHub:      ShihabReza  (https://github.com/ShihabRezaAdit/nctb-bench-rag-benchmark)
   - HuggingFace: ShihabReza  (https://huggingface.co/datasets/ShihabReza/nctb-qa)
 
 No manual find-and-replace needed — proceed directly to Step 2.
@@ -57,7 +57,7 @@ STEP 2B — CREATE THE GITHUB REPOSITORY (using GitHub website — manual method
   5. DO NOT check "Initialize this repository with a README" (we're uploading our own)
   6. Click "Create repository"
   7. Copy the repository URL shown — it will look like:
-       https://github.com/ShihabReza/nctb-bench-rag-benchmark.git
+       https://github.com/ShihabRezaAdit/nctb-bench-rag-benchmark.git
 
 ================================================================================
 STEP 3 — INITIALIZE GIT IN YOUR LOCAL FOLDER
@@ -94,7 +94,7 @@ STEP 4 — CONNECT TO GITHUB AND PUSH
 
 Replace ShihabReza with your actual GitHub username:
 
-  git remote add origin https://github.com/ShihabReza/nctb-bench-rag-benchmark.git
+  git remote add origin https://github.com/ShihabRezaAdit/nctb-bench-rag-benchmark.git
   git push -u origin main
 
 If prompted for credentials:
@@ -111,7 +111,7 @@ STEP 5 — VERIFY THE REPOSITORY LOOKS CORRECT
 
 After push completes, open your browser:
 
-  https://github.com/ShihabReza/nctb-bench-rag-benchmark
+  https://github.com/ShihabRezaAdit/nctb-bench-rag-benchmark
 
 Verify the following are visible:
   [ ] README.md renders correctly with the badges and tables
@@ -183,11 +183,11 @@ STEP 8 — LINK THE PAPER REPOSITORY URL BACK INTO OTHER ARTIFACTS
 After the repo is live, update the paper and HuggingFace card:
 
   A. In E:\CSAA Project\Latex\main.tex
-     Find: github.com/ShihabReza/nctb-bench-rag-benchmark (or any placeholder)
+     Find: github.com/ShihabRezaAdit/nctb-bench-rag-benchmark (or any placeholder)
      Replace with: github.com/YOUR-ACTUAL-USERNAME/nctb-bench-rag-benchmark
 
   B. In E:\CSAA Project\huggingface\README.md
-     Find: https://github.com/ShihabReza/nctb-bench-rag-benchmark
+     Find: https://github.com/ShihabRezaAdit/nctb-bench-rag-benchmark
      Replace with the actual URL
 
   C. In E:\CSAA Project\github\README.md (already pushed — need to update + re-push)
@@ -219,7 +219,7 @@ QUICK REFERENCE — ALL COMMANDS IN ORDER
   git add .
   git status
   git commit -m "Initial release: NCTBench pipeline, evaluation framework, and results"
-  git remote add origin https://github.com/ShihabReza/nctb-bench-rag-benchmark.git
+  git remote add origin https://github.com/ShihabRezaAdit/nctb-bench-rag-benchmark.git
   git push -u origin main
 
   git tag -a v1.0.0 -m "NCTBench v1.0.0 — initial paper release"

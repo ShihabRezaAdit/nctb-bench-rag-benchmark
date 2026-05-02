@@ -155,7 +155,7 @@ ds = load_dataset("ShihabReza/nctb-qa")
 ### Installation
 
 ```bash
-git clone https://github.com/ShihabReza/nctb-bench-rag-benchmark.git
+git clone https://github.com/ShihabRezaAdit/nctb-bench-rag-benchmark.git
 cd nctb-bench-rag-benchmark
 
 # Create conda environment

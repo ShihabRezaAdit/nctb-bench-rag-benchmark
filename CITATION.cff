@@ -22,7 +22,7 @@ authors:
 version: 1.0.0
 date-released: "2026-05-02"
 license: CC-BY-4.0
-repository-code: "https://github.com/ShihabReza/nctb-bench-rag-benchmark"
+repository-code: "https://github.com/ShihabRezaAdit/nctb-bench-rag-benchmark"
 url: "https://huggingface.co/datasets/ShihabReza/nctb-qa"
 keywords:
   - question-answering
