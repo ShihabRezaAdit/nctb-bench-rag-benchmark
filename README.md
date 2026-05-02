@@ -323,7 +323,7 @@ nctb-bench-rag-benchmark/
 
 | Name | Affiliation | Role |
 |---|---|---|
-| **Md Shihab Reza** | North South University, Dhaka, Bangladesh | Lead Author |
+| **Md Shihab Reza** | North South University (NSU), Dhaka, Bangladesh | Lead Author |
 | **Sk Muktadir Hossain** | American International University-Bangladesh (AIUB), Dhaka, Bangladesh | Co-Lead Author |
 | **Kazi Abdur Rahman** | American International University-Bangladesh (AIUB), Dhaka, Bangladesh | Co-Author |
 | **Dr. Muhammad Hasibur Rashid Chayon** | American International University-Bangladesh (AIUB), Dhaka, Bangladesh | Supervisor |
@@ -344,7 +344,7 @@ nctb-bench-rag-benchmark/
   publisher = {Hugging Face},
   url       = {https://huggingface.co/datasets/ShihabReza/nctb-qa},
   license   = {CC BY 4.0},
-  note      = {North South University; American International University-Bangladesh (AIUB)}
+  note      = {North South University (NSU); American International University-Bangladesh (AIUB)}
 }
 ```
 
@@ -365,4 +365,4 @@ Bangladesh, and are publicly available for educational use.
 ## Contact
 
 **Md Shihab Reza** — shihab.reza@northsouth.edu | shihabreza.nsu@gmail.com
-North South University, Dhaka, Bangladesh
+North South University (NSU), Dhaka, Bangladesh
