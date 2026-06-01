@@ -363,8 +363,13 @@ Bangladesh, and are publicly available for educational use.
 ---
 
 ## Contact
-Corresponding Author:
-**Sk Muktadir Hossain** — muktadir@aiub.edu | 26-93966-1@student.aiub.edu
+
+**Corresponding Author:**
+
+**Sk Muktadir Hossain**  
+[muktadir@aiub.edu](mailto:muktadir@aiub.edu) | [26-93966-1@student.aiub.edu](mailto:26-93966-1@student.aiub.edu)  
 American International University-Bangladesh (AIUB)
-**Md Shihab Reza** — shihab.reza@northsouth.edu | shihabreza.nsu@gmail.com
+
+**Md Shihab Reza**  
+[shihab.reza@northsouth.edu](mailto:shihab.reza@northsouth.edu) | [shihabreza.nsu@gmail.com](mailto:shihabreza.nsu@gmail.com)  
 North South University (NSU), Dhaka, Bangladesh
